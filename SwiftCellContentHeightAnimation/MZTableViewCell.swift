@@ -41,6 +41,12 @@ class MZTableViewCell: UITableViewCell {
     
     weak var parentTableView : UITableView?
     
+    weak var tableViewDelegate : PresentImagePreviewVCDelegate?{
+        didSet{
+            self.pictureView.tableViewDelegate = tableViewDelegate
+        }
+    }
+    
     @IBOutlet weak var seeMoreButton: UIButton!
     
     @IBAction func seeMoreDetail(_ sender: UIButton) {

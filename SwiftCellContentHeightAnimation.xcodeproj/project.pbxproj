@@ -17,6 +17,9 @@
 		2488D1A51E38E63000F1C9CF /* MZTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2488D1A31E38E63000F1C9CF /* MZTableViewCell.xib */; };
 		2488D1A71E38E9E300F1C9CF /* MZHomeTableCellPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488D1A61E38E9E300F1C9CF /* MZHomeTableCellPictureView.swift */; };
 		2488D1A91E38EA3000F1C9CF /* MZHomeTableCellDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488D1A81E38EA3000F1C9CF /* MZHomeTableCellDetailView.swift */; };
+		2488D1AB1E38F7C700F1C9CF /* MZImagePreviewPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488D1AA1E38F7C700F1C9CF /* MZImagePreviewPageViewController.swift */; };
+		2488D1AD1E38F85600F1C9CF /* MZSingleImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488D1AC1E38F85600F1C9CF /* MZSingleImagePreviewViewController.swift */; };
+		2488D1AF1E38F90200F1C9CF /* MZImagePreviewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488D1AE1E38F90200F1C9CF /* MZImagePreviewAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		2488D1A31E38E63000F1C9CF /* MZTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MZTableViewCell.xib; sourceTree = "<group>"; };
 		2488D1A61E38E9E300F1C9CF /* MZHomeTableCellPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZHomeTableCellPictureView.swift; sourceTree = "<group>"; };
 		2488D1A81E38EA3000F1C9CF /* MZHomeTableCellDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZHomeTableCellDetailView.swift; sourceTree = "<group>"; };
+		2488D1AA1E38F7C700F1C9CF /* MZImagePreviewPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZImagePreviewPageViewController.swift; sourceTree = "<group>"; };
+		2488D1AC1E38F85600F1C9CF /* MZSingleImagePreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZSingleImagePreviewViewController.swift; sourceTree = "<group>"; };
+		2488D1AE1E38F90200F1C9CF /* MZImagePreviewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MZImagePreviewAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,9 @@
 				2488D1A61E38E9E300F1C9CF /* MZHomeTableCellPictureView.swift */,
 				2488D1A21E38E63000F1C9CF /* MZTableViewCell.swift */,
 				2488D1A31E38E63000F1C9CF /* MZTableViewCell.xib */,
+				2488D1AE1E38F90200F1C9CF /* MZImagePreviewAnimator.swift */,
+				2488D1AA1E38F7C700F1C9CF /* MZImagePreviewPageViewController.swift */,
+				2488D1AC1E38F85600F1C9CF /* MZSingleImagePreviewViewController.swift */,
 			);
 			path = SwiftCellContentHeightAnimation;
 			sourceTree = "<group>";
@@ -272,10 +281,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2488D1771E38E5AF00F1C9CF /* MZViewController.swift in Sources */,
+				2488D1AB1E38F7C700F1C9CF /* MZImagePreviewPageViewController.swift in Sources */,
 				2488D1751E38E5AF00F1C9CF /* AppDelegate.swift in Sources */,
 				2488D1A71E38E9E300F1C9CF /* MZHomeTableCellPictureView.swift in Sources */,
 				2488D1A41E38E63000F1C9CF /* MZTableViewCell.swift in Sources */,
 				2488D1A91E38EA3000F1C9CF /* MZHomeTableCellDetailView.swift in Sources */,
+				2488D1AF1E38F90200F1C9CF /* MZImagePreviewAnimator.swift in Sources */,
+				2488D1AD1E38F85600F1C9CF /* MZSingleImagePreviewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

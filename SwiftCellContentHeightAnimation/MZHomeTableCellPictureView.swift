@@ -21,6 +21,8 @@ class MZHomeTableCellPictureView: UIView{
     
     @IBOutlet weak var heightCons: NSLayoutConstraint!
     
+    weak var tableViewDelegate : PresentImagePreviewVCDelegate?
+    
     var images = [UIImage](){
         didSet{
             calcViewSize()
@@ -84,7 +86,7 @@ class MZHomeTableCellPictureView: UIView{
         
         // now after we decieded the size of imageView, we load images from firebase server.
         
-//        addGestures()
+        addGestures()
         loadImages()
         
         
@@ -96,16 +98,16 @@ class MZHomeTableCellPictureView: UIView{
         setupUI()
     }
     
-//    func addGestures(){
-//        
-//        for iv in subviews as! [UIImageView]{
-//            
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView))
-//            
-//            iv.addGestureRecognizer(tap)
-//        }
-//        
-//    }
+    func addGestures(){
+        
+        for iv in subviews as! [UIImageView]{
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapImageView))
+            
+            iv.addGestureRecognizer(tap)
+        }
+        
+    }
     
     func calcPictureViewSize(count: Int?) -> CGSize {
         
@@ -158,32 +160,18 @@ class MZHomeTableCellPictureView: UIView{
         }
     }
     
-//    func tapImageView(tap : UITapGestureRecognizer){
-//        
-//        let iv = tap.view
-//        
-//        let selectedIndex = iv!.tag
-//        
-//        var highQualityImageUrls = [String]()
-//        var imageViews = [UIImageView]()
-//        
-//        // now we obtain all the high quality image urls from the dictionary.
-//        for photo in photoModels {
-//            if photo.lowQualityUrlString != nil && photo.highQualityUrlString != nil{
-//                
-//                highQualityImageUrls.append(photo.highQualityUrlString!)
-//                
-//                imageViews.append(photo.imageView!)
-//            }
-//            
-//        }
-//        
-//        let imagePreviewController = ImagePreviewPageViewController(imageViews : imageViews,
-//                                                                    urlStrings : highQualityImageUrls,
-//                                                                    selectedIndex : selectedIndex)
-//        
-//        tableViewDelegate?.presentVC(vc: imagePreviewController)
-//    }
+    func tapImageView(tap : UITapGestureRecognizer){
+        
+        let iv = tap.view
+        
+        let selectedIndex = iv!.tag
+        
+        let imagePreviewController = MZImagePreviewPageViewController(imageViews : imageViews,
+                                                                      imageCount : images.count,
+                                                                      selectedIndex : selectedIndex)
+        
+        tableViewDelegate?.presentVC(vc: imagePreviewController)
+    }
 }
 
 extension MZHomeTableCellPictureView {

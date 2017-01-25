@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol PresentImagePreviewVCDelegate : class {
+    
+    func presentVC(vc : MZImagePreviewPageViewController)
+}
+
 class MZViewController: UIViewController {
 
     var tableView: UITableView?
@@ -71,7 +76,7 @@ extension MZViewController{
     
 }
 
-extension MZViewController : UITableViewDataSource{
+extension MZViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 9
@@ -79,17 +84,18 @@ extension MZViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var i = indexPath.row
-        
-        var image = UIImage(named: "test_image")
         var images = [UIImage]()
-        
-        if indexPath.row == 1{
-            i -= 1
-            image = UIImage(named: "test_image2")
-        }
-
-        for _ in 0...i{
+        for index in 1...indexPath.row+1{
+            var image = UIImage(named: "test_image\(index)")
+            
+            if indexPath.row == 1{
+                image = UIImage(named: "test_image2")
+                if let image = image{
+                    images.append(image)
+                }
+                break
+            }
+            
             if let image = image{
                 images.append(image)
             }
@@ -99,6 +105,7 @@ extension MZViewController : UITableViewDataSource{
         
         cell.pictureView.images = images
         cell.parentTableView = self.tableView
+        cell.tableViewDelegate = self
         
         if cell.showMore == nil{
             cell.showMore = false
@@ -106,9 +113,20 @@ extension MZViewController : UITableViewDataSource{
         
         return cell
     }
+
 }
 
-extension MZViewController : UITableViewDelegate{
+extension MZViewController: PresentImagePreviewVCDelegate{
+    
+    func presentVC(vc : MZImagePreviewPageViewController) {
+        
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension MZViewController: UITableViewDelegate{
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
