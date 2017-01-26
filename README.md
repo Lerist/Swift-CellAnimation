@@ -30,13 +30,13 @@ UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.6, initial
             self.tableView?.endUpdates()
         }, 
         completion: nil)
- ```
+```
  
- The fixed-height view with higher priority will not get animated, only the one with lowest priority will get animated.
- 
- ## Author
+The fixed-height view with higher priority will not get animated, only the one with lowest priority will get animated.
+## Author
 
 Marvin Zhan, marvinzhanmonster@gmail.com, Wechat : mononster
+
 Currently University of Waterloo undergraduate student.
 
 ## License
